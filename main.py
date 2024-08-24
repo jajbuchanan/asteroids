@@ -6,11 +6,15 @@ pygame.init()
 
 def main():
     screen = pygame.display.set_mode(size=(SCREEN_WIDTH, SCREEN_HEIGHT))
+    clock = pygame.time.Clock()
+    dt = 0
+
     running = True
     while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
+            dt = clock.tick(60)
     screen.fill((0, 0, 0))
     pygame.display.flip()
 
